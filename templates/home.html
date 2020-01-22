@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <head>
+        <title>BoMD 0.1</title>
+    </head>
+    <body>
+        <h3>Jack & Mia's Bank of Mum & Dad</h3>
+        <form method='POST' action='/'>
+            <table>
+                <tr>
+                <td><input type="radio" name="name" value="jack" checked> Jack</td>
+                <td><input type="radio" name="name" value="mia"> Mia</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="trans_type" value=1.0 checked> Deposit</td>
+                    <td><input type="radio" name="trans_type" value=-1.0> Withdrawal</td>
+                </tr>
+                <tr>
+                    <td>amount</td>
+                    <td><input type='text' name='amount'></td>
+                </tr>
+                <tr>
+                    <td>note</td>
+                    <td><input type='text' name='note'></td>
+                </tr>
+                </table>
+            <input type="submit" class="w3-button w3-black", value='Commit Transaction'>
+        </form>
+        <p>Balances</p>
+        <table>
+            {% for b in balances %}
+            <tr>
+                <td>{{b.name}}</td><td>{{b.balance}}</td>
+            </tr>
+            {% endfor %}        
+        </table>
+        <p>Last 5 Entries...</p>
+        <table>
+            {% for e in entries %}
+            <tr>
+                <td>{{e.name}}</td><td>{{e.amount}}</td><td>{{e.note}}</td>
+            </tr>
+            {% endfor %}        
+        </table>
+    </body>
+</html
